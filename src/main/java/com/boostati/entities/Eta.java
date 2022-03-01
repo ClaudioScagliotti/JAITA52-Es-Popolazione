@@ -12,9 +12,6 @@ import javax.persistence.Table;
 public class Eta {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="id")
-	private int id;
 	@Column(name="eta")
 	private String eta;
 	@Column(name="maschi")
@@ -24,12 +21,7 @@ public class Eta {
 	@Column(name="totale")
 	private int totale;
 	
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
+
 	public String getEta() {
 		return eta;
 	}
