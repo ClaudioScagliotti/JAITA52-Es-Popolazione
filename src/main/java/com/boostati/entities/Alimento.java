@@ -1,4 +1,4 @@
-package com.boglia.entities;
+package com.boostati.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

@@ -1,4 +1,4 @@
-package com.boglia.services;
+package com.boostati.services;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -6,8 +6,8 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.boglia.dal.AlimentoDAO;
-import com.boglia.entities.Alimento;
+import com.boostati.dal.AlimentoDAO;
+import com.boostati.entities.Alimento;
 
 
 @Service

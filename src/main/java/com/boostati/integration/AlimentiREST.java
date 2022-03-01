@@ -1,4 +1,4 @@
-package com.boglia.integration;
+package com.boostati.integration;
 
 import java.util.List;
 
@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.boglia.entities.Alimento;
-import com.boglia.services.AlimentoService;
+import com.boostati.entities.Alimento;
+import com.boostati.services.AlimentoService;
 
 @RestController
 @RequestMapping({"api", "rest"})

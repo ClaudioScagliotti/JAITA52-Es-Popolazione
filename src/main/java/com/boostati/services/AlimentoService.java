@@ -1,8 +1,8 @@
-package com.boglia.services;
+package com.boostati.services;
 
 import java.util.List;
 
-import com.boglia.entities.Alimento;
+import com.boostati.entities.Alimento;
 
 public interface AlimentoService {
 
