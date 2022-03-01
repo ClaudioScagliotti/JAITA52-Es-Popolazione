@@ -13,47 +13,35 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.boostati.entities.Alimento;
-import com.boostati.services.AlimentoService;
+import com.boostati.entities.Regione;
+import com.boostati.services.RegioneService;
 
 @RestController
 @RequestMapping({"api", "rest"})
-public class AlimentiREST {
+public class RegioniREST {
 
 	@Autowired
-	private AlimentoService service;
+	private RegioneService service;
 	
 	
 	@GetMapping
-	public List<Alimento> pippo(){
-		return service.getAlimenti();
-	}
-	
-	@CrossOrigin
-	@GetMapping("cat/{categoria}")
-	public List<Alimento> getByCat(@PathVariable("categoria") String category){
-		return service.getAlimentiByCategoria(category);
-	}
-	
-	@CrossOrigin
-	@GetMapping("categorie")
-	public List<String> getCategorie(){
-		return this.service.getCategorie();
+	public List<Regione> pippo(){
+		return service.getRegioni();
 	}
 	
 	@PostMapping
-	public void addAlimento(@RequestBody Alimento a) {
-		service.addAlimento(a);
+	public void addAlimento(@RequestBody Regione a) {
+		service.addRegione(a);
 	}
 	
 	@PutMapping
-	public void updAlimento(@RequestBody Alimento a) {
-		service.updAlimento(a);
+	public void updAlimento(@RequestBody Regione a) {
+		service.updRegione(a);
 	}
 	
 	@DeleteMapping("/{id}")
 	public void delAlimento(@PathVariable int id) {
-		service.delAlimento(id);
+		service.delRegione(id);
 	}
 	
 }
