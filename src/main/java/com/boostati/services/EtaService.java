@@ -10,11 +10,12 @@ import com.boostati.entities.Eta;
 public interface EtaService {
 	void addEta (Eta e);
 	void updEta(Eta e);
-	void delEta(int id);
+	void delEta(String id);
+	
 	
 	List <Eta> getAllEta();
-	List <Eta> getIntervalloEta(int inizio, int fine);
-	List <Eta> getEtaByEta(int eta);
+	//List <Eta> getIntervalloEta(String inizio, String fine);
+	//List <Eta> getEtaByEta(int eta);
 	
 	
 
