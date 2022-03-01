@@ -10,7 +10,6 @@ import com.boostati.entities.Regione;
 @Repository
 public interface RegioneDAO extends JpaRepository<Regione, Integer> {
 
-	List<Regione> findByCategoria(String categoria);
+	List<Regione> findByRegione(String regione);
 	//List<String> findDistinctByCategoria();
-	
 }

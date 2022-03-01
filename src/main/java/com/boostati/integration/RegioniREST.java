@@ -26,7 +26,13 @@ public class RegioniREST {
 	
 	@GetMapping
 	public List<Regione> pippo(){
-		return service.getRegioni();
+		return service.getAll();
+	}
+	
+	@CrossOrigin
+	@GetMapping("nomi-regioni")
+	public List<String> getCategorie(){
+		return this.service.getNomiRegioni();
 	}
 	
 	@PostMapping

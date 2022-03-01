@@ -35,10 +35,19 @@ public class RegioneServiceImpl implements RegioneService {
 	}
 
 	@Override
-	public List<Regione> getRegioni() {
+	public List<Regione> getAll() {
 		return this.repo.findAll();
 	}
 
+	
+	@Override
+	public List<String> getNomiRegioni() {
+		return this.getAll().stream()
+				.map(r->r.getRegione())
+				.distinct()
+				.collect(Collectors.toList());
+	}
+	
 	@Override
 	public Regione getRegioneById(int id) {
 		return this.repo.getById(id);
