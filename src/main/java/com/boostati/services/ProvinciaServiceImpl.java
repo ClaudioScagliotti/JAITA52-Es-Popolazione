@@ -6,42 +6,42 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.boostati.dal.RegioneDAO;
-import com.boostati.entities.Regione;
+import com.boostati.dal.ProvinciaDAO;
+import com.boostati.entities.Provincia;
 
 
 @Service
-public class RegioneServiceImpl implements RegioneService {
+public class ProvinciaServiceImpl implements ProvinciaService {
 
 	@Autowired
-	private RegioneDAO repo;
+	private ProvinciaDAO repo;
 	
 	@Override
-	public void addRegione(Regione a) {
+	public void addProvincia(Provincia a) {
 		this.repo.save(a);
 
 	}
 
 	@Override
-	public void updRegione(Regione a) {
+	public void updProvincia(Provincia a) {
 		this.repo.save(a);
 
 	}
 
 	@Override
-	public void delRegione(int id) {
+	public void delProvincia(int id) {
 		this.repo.deleteById(id);
 
 	}
 
 	@Override
-	public List<Regione> getAll() {
+	public List<Provincia> getAll() {
 		return this.repo.findAll();
 	}
 
 	
 	@Override
-	public List<String> getNomiRegioni() {
+	public List<String> getNomiProvincia() {
 		return this.getAll().stream()
 				.map(r->r.getRegione())
 				.distinct()
@@ -49,7 +49,12 @@ public class RegioneServiceImpl implements RegioneService {
 	}
 	
 	@Override
-	public Regione getRegioneById(int id) {
+	public Provincia getProvinciaById(int id) {
 		return this.repo.getById(id);
+	}
+	
+	@Override
+	public List<Provincia> getAllFromReg(String region) {
+		return this.repo.findByRegione(region);
 	}
 }

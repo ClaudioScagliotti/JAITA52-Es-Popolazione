@@ -8,7 +8,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "popolazione_italiana_regione")
-public class Regione {
+public class Provincia {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 
 import com.boostati.entities.Eta;
 
-@Service
 public interface EtaService {
 	void addEta (Eta e);
 	void updEta(Eta e);

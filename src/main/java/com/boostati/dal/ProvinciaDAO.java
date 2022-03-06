@@ -5,11 +5,11 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.boostati.entities.Regione;
+import com.boostati.entities.Provincia;
 
 @Repository
-public interface RegioneDAO extends JpaRepository<Regione, Integer> {
+public interface ProvinciaDAO extends JpaRepository<Provincia, Integer> {
 
-	List<Regione> findByRegione(String regione);
+	List<Provincia> findByRegione(String regione);
 	//List<String> findDistinctByCategoria();
 }

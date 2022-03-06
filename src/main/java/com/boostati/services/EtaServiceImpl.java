@@ -3,11 +3,13 @@ package com.boostati.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.boostati.dal.EtaDAO;
-import com.boostati.dal.RegioneDAO;
+import com.boostati.dal.ProvinciaDAO;
 import com.boostati.entities.Eta;
 
+@Service
 public class EtaServiceImpl implements EtaService {
 
 	

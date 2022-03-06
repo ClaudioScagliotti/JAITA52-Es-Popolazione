@@ -1,0 +1,17 @@
+
+.scheda {
+	margin: 2rem;
+	padding: 1.5rem;
+    border: 2px solid black;
+    border-radius: 2rem;
+    background-color: #ddd;
+}
+
+.scheda div{
+    margin: 1rem 0;
+}
+
+.scheda p{
+	margin-bottom: 2.5rem;
+}
+

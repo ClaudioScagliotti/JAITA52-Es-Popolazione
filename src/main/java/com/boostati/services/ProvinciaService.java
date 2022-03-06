@@ -2,20 +2,23 @@ package com.boostati.services;
 
 import java.util.List;
 
-import com.boostati.entities.Regione;
+import com.boostati.entities.Provincia;
 
-public interface RegioneService {
+public interface ProvinciaService {
 	
 	//CRUD
-	void addRegione(Regione a);
-	void updRegione(Regione a);
-	void delRegione(int id);
+	void addProvincia(Provincia a);
+	void updProvincia(Provincia a);
+	void delProvincia(int id);
 	
-	List<Regione> getAll();
+	List<Provincia> getAll();
 	
-	List<String> getNomiRegioni();
+	List<Provincia> getAllFromReg(String region);
+	
+	List<String> getNomiProvincia();
 
 	
-	Regione getRegioneById(int id);
+	
+	Provincia getProvinciaById(int id);
 	
 }
