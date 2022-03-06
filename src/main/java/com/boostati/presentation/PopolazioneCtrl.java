@@ -43,9 +43,15 @@ public class PopolazioneCtrl {
 	}
 	
 	@GetMapping("/comune/{comune_id}")
-	public String getEta(@PathVariable("comune_id") int id, Model model) {
+	public String getComune(@PathVariable("comune_id") int id, Model model) {
 		model.addAttribute("comune", this.regioneSvc.getProvinciaById(id));
 		return "comune";
+	}
+	
+	@GetMapping("/eta")
+	public String getEta(Model model)
+	{
+		return "eta";
 	}
 	
 }

@@ -17,5 +17,7 @@ public interface EtaService {
 	//List <Eta> getEtaByEta(int eta);
 	
 	List<Eta> getEtaBetween(int min, int max);
+	
+	
 
 }
