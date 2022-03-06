@@ -3,6 +3,7 @@
 const URL = 'http://localhost:9006/popolazione/api/set-province';
 let SX = document.getElementById("sinistra");
 let DX = document.getElementById("destra");
+let selezione = null;
 
 document.addEventListener('DOMContentLoaded', e => {
 
@@ -11,13 +12,16 @@ document.addEventListener('DOMContentLoaded', e => {
     
     let regione = document.getElementById("regione_id").textContent;
 
+	let findButton = document.getElementById("find");
+	findButton.addEventListener('click',findProvincia);
+
     fetch(URL+`?regione=${encodeURIComponent(regione)}`,{
         method: 'GET'
-      }).then(e => e.json()).then(cat => {
+      }).then(e => e.json()).then(comuni => {
     
         let output = '<select class="form-control" id="tendina" onchange="selezionaProvincia()">';
-        for (const categoria of cat) {
-            output += '<option>'+categoria +'</option>';
+        for (const comune of comuni) {
+            output += `<option data-comune_id="${comune.id}">${comune.comune}</option>`;
         }
         output += '</select>';
         
@@ -27,8 +31,13 @@ document.addEventListener('DOMContentLoaded', e => {
 });
 
 function selezionaProvincia() {
-    let tendina = document.getElementById('tendina');
+    let nodeSelected = document.getElementById('tendina').selectedOptions[0];
     let scelta = tendina.value;
     
-    window.location=scelta+'/provincia';
+	selezione = nodeSelected.dataset.comune_id;
+    //window.location=scelta+'/provincia';
+}
+
+function findProvincia(event){
+	window.location=`../comune/${selezione}`;
 }

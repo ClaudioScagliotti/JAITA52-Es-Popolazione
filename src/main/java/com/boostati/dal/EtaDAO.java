@@ -12,4 +12,6 @@ public interface EtaDAO extends JpaRepository<Eta, Integer> {
 //	@Query("select * from popolazione.popolazione_italiana_eta where eta>inizio and eta<fine" )
 //	void getEtaIntervallo(String inizio, String fine);
 //	List <Eta> findEtaByEtaBetween(Str)
+	
+	List<Eta> findByEtaBetween(int min, int max);
 }

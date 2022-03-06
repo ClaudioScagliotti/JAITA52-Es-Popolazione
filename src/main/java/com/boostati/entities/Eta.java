@@ -13,7 +13,7 @@ public class Eta {
 
 	@Id
 	@Column(name="eta")
-	private String eta;
+	private int eta;
 	@Column(name="maschi")
 	private int maschi;
 	@Column(name="femmine")
@@ -21,11 +21,10 @@ public class Eta {
 	@Column(name="totale")
 	private int totale;
 	
-
-	public String getEta() {
+	public int getEta() {
 		return eta;
 	}
-	public void setEta(String eta) {
+	public void setEta(int eta) {
 		this.eta = eta;
 	}
 	public int getMaschi() {
@@ -46,5 +45,4 @@ public class Eta {
 	public void setTotale(int totale) {
 		this.totale = totale;
 	}	
-	
 }

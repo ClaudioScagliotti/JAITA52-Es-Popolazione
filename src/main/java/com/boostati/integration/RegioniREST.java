@@ -25,7 +25,6 @@ public class RegioniREST {
 	@Autowired
 	private ProvinciaService service;
 	
-	
 	@GetMapping
 	public List<Provincia> pippo(){
 		return service.getAll();
@@ -39,28 +38,15 @@ public class RegioniREST {
 	
 	@CrossOrigin
 	@GetMapping("set-province")
-	public List<String> getProvinceByReg(@RequestParam(name = "regione") String reg){
-		List<Provincia> province = (reg==null || reg.isEmpty())?
-				this.service.getAll():this.service.getAllFromReg(reg);
-		
-		return province.stream()
-					.map(p->p.getComune())
-					.collect(Collectors.toList());
+	public List<Provincia> getProvinceByReg(@RequestParam(name = "regione") String reg){
+		return reg==null || reg.isEmpty()?
+					this.service.getAll():
+					this.service.getAllFromReg(reg);
 	}
 	
-	@PostMapping
-	public void addAlimento(@RequestBody Provincia a) {
-		service.addProvincia(a);
+	@CrossOrigin
+	@GetMapping("{provincia_id}")
+	public Provincia getProvincia(@PathVariable(name = "provincia_id") int provincia_id){
+		return this.service.getProvinciaById(provincia_id);
 	}
-	
-	@PutMapping
-	public void updAlimento(@RequestBody Provincia a) {
-		service.updProvincia(a);
-	}
-	
-	@DeleteMapping("/{id}")
-	public void delAlimento(@PathVariable int id) {
-		service.delProvincia(id);
-	}
-	
 }

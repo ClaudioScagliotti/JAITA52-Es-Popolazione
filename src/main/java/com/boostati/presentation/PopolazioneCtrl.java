@@ -42,9 +42,10 @@ public class PopolazioneCtrl {
 		return "provincia";
 	}
 	
-	@GetMapping("/eta")
-	public String getEta(Model model) {
-		return "eta";
+	@GetMapping("/comune/{comune_id}")
+	public String getEta(@PathVariable("comune_id") int id, Model model) {
+		model.addAttribute("comune", this.regioneSvc.getProvinciaById(id));
+		return "comune";
 	}
 	
 }

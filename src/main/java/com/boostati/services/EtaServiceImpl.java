@@ -39,6 +39,11 @@ public class EtaServiceImpl implements EtaService {
 		return this.repo.findAll();
 	}
 
+	@Override
+	public List<Eta> getEtaBetween(int min, int max) {
+		return this.repo.findByEtaBetween(min, max);
+	}
+	
 //	@Override
 //	public List<Eta> getIntervalloEta(String inizio, String fine) {
 //		

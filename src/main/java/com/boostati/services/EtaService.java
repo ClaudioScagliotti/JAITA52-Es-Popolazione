@@ -16,6 +16,6 @@ public interface EtaService {
 	//List <Eta> getIntervalloEta(String inizio, String fine);
 	//List <Eta> getEtaByEta(int eta);
 	
-	
+	List<Eta> getEtaBetween(int min, int max);
 
 }
