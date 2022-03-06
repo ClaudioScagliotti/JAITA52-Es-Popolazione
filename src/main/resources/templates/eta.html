@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>HomePage</title>
+    <title>eta</title>
 
     <!--BOOTSTRAP-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -16,9 +16,55 @@
 
 <body>
 
-
-
     <div class="container">
+        <div class="scheda">
+        	<p>
+	        	<strong>Dati ISTAT popolazione italiana</strong>
+        	</p>
+            <div class="row">
+                <div class="col-sm-2 ">
+                <label for="min_select">Età minima</label>
+	            <select id ="min_select" class="form-select" multiple aria-label="multiple select example">
+                    
+                    <option value="">18</option>
+                    
+                    
+                  </select>
+                </div>
+                  <div class="col-sm-2 ">
+                <label for="max_select">Età massima</label>
+                  <select id="max_select" class="form-select" multiple aria-label="multiple select example">
+                    <option value="">18</option>
+                  </select>
+                </div>
+                <div class="col-sm-2">
+                    <button>Trova</button>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div  id="table_container" class="container" >
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Età</th>
+                <th scope="col">Maschi</th>
+                <th scope="col">Femmine</th>
+                <th scope="col">% maschi</th>
+                <th scope="col">% femmine</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{eta}}</td>
+                    <td>{{maschi}}</td>
+                    <td>{{femmine}}</td>
+                    <td>{{%maschi}}</td>
+                    <td>{{%femmine}}</td>
+                </tr>
+            </tbody>
+          </table>
+        </div>
         <div class="scheda">
         	<p id="dati_istat_text" 
         		data-prefix="Fonte dati ISTAT - Percentuale maschi e femmine nella fascia di età "
