@@ -20,7 +20,7 @@ public class EtaRest {
 	private EtaService service;
 	
 	@CrossOrigin
-	@GetMapping("/etaData")
+	@GetMapping("/eta-data")
 	public List<Eta> getDataBetween(
 			@RequestParam(name = "min") int min,
 			@RequestParam(name = "max") int max){

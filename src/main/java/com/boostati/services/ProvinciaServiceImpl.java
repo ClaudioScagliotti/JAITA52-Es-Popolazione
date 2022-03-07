@@ -57,4 +57,14 @@ public class ProvinciaServiceImpl implements ProvinciaService {
 	public List<Provincia> getAllFromReg(String region) {
 		return this.repo.findByRegione(region);
 	}
+	
+	@Override
+	public long getPopolazioneTotale() {
+		return this.repo.totPopulation();
+	}
+	
+	@Override
+	public long getTotalePerRegione(String reg) {
+		return this.repo.regTotPopulation(reg);
+	}
 }

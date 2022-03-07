@@ -1,0 +1,17 @@
+.begin_text{
+	margin: 2rem;
+}
+
+.begin_text p{
+    font-weight: bold;
+}
+
+.progress{
+	margin: 1rem 0;
+	height: 1.5rem;
+	color:red;
+}
+
+.progress-bar{
+	border: 2px solid black;	
+}

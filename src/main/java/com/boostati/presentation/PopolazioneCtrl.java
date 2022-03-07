@@ -44,7 +44,11 @@ public class PopolazioneCtrl {
 	
 	@GetMapping("/comune/{comune_id}")
 	public String getComune(@PathVariable("comune_id") int id, Model model) {
-		model.addAttribute("comune", this.regioneSvc.getProvinciaById(id));
+		var provincia = this.regioneSvc.getProvinciaById(id);
+		model.addAttribute("comune", provincia);
+		var totX100 = provincia.getTotale()*100;
+		model.addAttribute("reg_per", Math.round((float)totX100/this.regioneSvc.getTotalePerRegione(provincia.getRegione())));
+		model.addAttribute("tot_per", Math.round((float)totX100/this.regioneSvc.getPopolazioneTotale()));
 		return "comune";
 	}
 	

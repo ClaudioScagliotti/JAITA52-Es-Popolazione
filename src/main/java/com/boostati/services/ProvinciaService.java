@@ -17,8 +17,10 @@ public interface ProvinciaService {
 	
 	List<String> getNomiProvincia();
 
-	
-	
 	Provincia getProvinciaById(int id);
+	
+	long getTotalePerRegione(String reg);
+	
+	long getPopolazioneTotale();
 	
 }

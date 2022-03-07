@@ -11,67 +11,65 @@
 	
     <!--CUSTOM-->
     <link rel="stylesheet" href="css/common/style.css">
+    <link rel="stylesheet" href="css/eta/style.css">
 	<script type="text/javascript" src="js/eta/script.js"></script>
 </head>
 
 <body>
 
     <div class="container">
-        <div class="scheda">
-        	<p>
-	        	<strong>Dati ISTAT popolazione italiana</strong>
-        	</p>
-            <div class="row">
-                <div class="col-sm-2 ">
-                <label for="min_select">Età minima</label>
-	            <select id ="min_select" class="form-select" multiple aria-label="multiple select example">
-                    
-                    <option value="">18</option>
-                    
-                    
-                  </select>
-                </div>
-                  <div class="col-sm-2 ">
-                <label for="max_select">Età massima</label>
-                  <select id="max_select" class="form-select" multiple aria-label="multiple select example">
-                    <option value="">18</option>
-                  </select>
-                </div>
-                <div class="col-sm-2">
-                    <button>Trova</button>
-                </div>
-            </div>
-        </div>
-        <br>
-        <div  id="table_container" class="container" >
-        <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">Età</th>
-                <th scope="col">Maschi</th>
-                <th scope="col">Femmine</th>
-                <th scope="col">% maschi</th>
-                <th scope="col">% femmine</th>
-              </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>{{eta}}</td>
-                    <td>{{maschi}}</td>
-                    <td>{{femmine}}</td>
-                    <td>{{%maschi}}</td>
-                    <td>{{%femmine}}</td>
-                </tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="scheda">
+    	<div class="row">
+			<div class="col-sm-2 sel-eta-box">
+				<label for="min_select">Età minima</label>
+				<select id ="min_select" class="form-select hide-bar" multiple aria-label="multiple select example" style="padding: 0.5rem 0;">
+       				<option value="{{eta}}">{{eta}} anni</option>  
+   				</select>
+  			</div>
+  
+			<div class="col-sm-2 sel-eta-box">
+				<label for="max_select">Età massima</label>
+				<select id="max_select" class="form-select hide-bar" multiple aria-label="multiple select example" style="padding: 0;">
+
+				</select>
+			</div>
+	                
+			<div class="col-sm-2">
+				<button id="btn_fetch_age_range">Trova</button>
+			</div>
+		</div>
+
+		<div class="row tbl_list">
+			<table class="table table-striped green-striped-table">
+	            <thead>
+	              <tr>
+	                <th scope="col">Età</th>
+	                <th scope="col">Maschi</th>
+	                <th scope="col">Femmine</th>
+	                <th scope="col">% maschi</th>
+	                <th scope="col">% femmine</th>
+	                <th scope="col">totale</th>
+	              </tr>
+	            </thead>
+				<tbody id="tr_tbl_eta">
+					<tr>
+						<td>{{eta}}</td>
+						<td>{{maschi}}</td>
+						<td>{{femmine}}</td>
+						<td>{{%maschi}}</td>
+						<td>{{%femmine}}</td>
+						<td>{{totale}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+        <div class="row scheda">
+
         	<p id="dati_istat_text" 
         		data-prefix="Fonte dati ISTAT - Percentuale maschi e femmine nella fascia di età "
         		data-suffix=" anni">
         	</p>
         </div>
     </div>
-
 </body>
 </html>
