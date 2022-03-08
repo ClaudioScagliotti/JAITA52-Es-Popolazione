@@ -1,0 +1,10 @@
+.center {
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+.error_img {
+    width: 20%;
+    height: 20%;
+}
