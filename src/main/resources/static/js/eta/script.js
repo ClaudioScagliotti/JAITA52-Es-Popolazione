@@ -91,8 +91,19 @@ function fetchEtaBetween(min, max, cb){
 
             if(cb!=null)
                 cb(json);
+         })
+         /*
+        .then(json=>{
+       let barM= document.getElementById(bar_maschi);
+       let mperc=Math.round(100*eta_data.maschi/eta_data.totale);
+       barM.innerHTML=mperc;
+
+
         });
-
-
+        */
 	updateText(min,max)
+
 }
+
+
+
