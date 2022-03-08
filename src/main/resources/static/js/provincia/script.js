@@ -18,8 +18,9 @@ document.addEventListener('DOMContentLoaded', e => {
     fetch(URL+`?regione=${encodeURIComponent(regione)}`,{
         method: 'GET'
       }).then(e => e.json()).then(comuni => {
-    
+        
         let output = '<select class="form-control" id="tendina" onchange="selezionaProvincia()">';
+         output+='<option>'+"Scegli il comune"+'</option>';
         for (const comune of comuni) {
             output += `<option data-comune_id="${comune.id}">${comune.comune}</option>`;
         }
