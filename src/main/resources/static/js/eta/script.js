@@ -17,12 +17,17 @@ document.addEventListener('DOMContentLoaded', event => {
     min_eta_select.addEventListener('change',onEtaBoundariesChange);
     max_eta_select = document.getElementById("max_select");
     max_eta_select.addEventListener('change',onEtaBoundariesChange);
+    let findButton = document.getElementById("indietro");
+	findButton.addEventListener('click',findProvincia);
 
     document.getElementById("btn_fetch_age_range")
         .addEventListener('click',onBtnFindClick);
     
     fetchEtaBetween(0,100,selectInitializerCb);
 });
+function findProvincia(event){
+	window.location=`/popolazione`;
+}
 
 function tryGetInt(valToConvert,defaultVal){
     let val = parseInt(valToConvert);
