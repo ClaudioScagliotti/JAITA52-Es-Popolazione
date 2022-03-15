@@ -67,6 +67,7 @@
 	height: 1.5rem;
 }
 
-#lbl_title_per{
+.space{
+	margin: 1rem;
 	margin-left: 0;
 }
