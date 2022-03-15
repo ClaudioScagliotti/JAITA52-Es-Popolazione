@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', e => {
       }).then(e => e.json()).then(comuni => {
         
         let output = '<select class="form-control" id="tendina" onchange="selezionaProvincia()">';
-         output+='<option>'+"Scegli il comune"+'</option>';
+         output+='<option>'+"Scegli la provincia"+'</option>';
         for (const comune of comuni) {
             output += `<option data-comune_id="${comune.id}">${comune.comune}</option>`;
         }

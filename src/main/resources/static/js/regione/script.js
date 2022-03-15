@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', e => {
     fetch(URL).then(e => e.json()).then(cat => {
     
         let output = '<select class="form-control" id="tendina" onchange="selezionaRegione()">';
-        output+='<option>'+"Scegli la provincia"+'</option>';
+        output+='<option>'+"Scegli la regione"+'</option>';
         for (const categoria of cat) {
             output += '<option>'+categoria +'</option>';
         }
