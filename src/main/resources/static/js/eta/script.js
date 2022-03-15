@@ -78,6 +78,8 @@ function fetchEtaBetween(min, max, cb){
 		.then(req=>req.json())
 		.then(json=>{
             eta_table.innerHTML = '';
+            let male = 0;
+            let female = 0;
 
             for(const eta_data of json){
                 let row = tr_template.replaceAll('{{eta}}',eta_data.eta+' anni')
@@ -87,7 +89,23 @@ function fetchEtaBetween(min, max, cb){
                     .replaceAll('{{%femmine}}',Math.round(100*eta_data.femmine/eta_data.totale))
                     .replaceAll('{{totale}}',eta_data.totale);
                 eta_table.innerHTML+=row;
+
+                male+=eta_data.maschi;
+                female+=eta_data.femmine;
             }
+
+            let total = male+female;
+            let percentage_male = parseInt(100*male/total);
+            let percentage_female = parseInt(100*female/total);
+
+            const male_div = document.getElementById("div_perc_male");
+            male_div.style.width = percentage_male+"%";
+            const male_lbl = document.getElementById("lbl_perc_male");
+            male_lbl.innerText = percentage_male+"%";
+            const female_div = document.getElementById("div_perc_female");
+            female_div.style.width = percentage_female+"%";
+            const female_lbl = document.getElementById("lbl_perc_female");
+            female_lbl.innerText = percentage_female+"%";
 
             if(cb!=null)
                 cb(json);

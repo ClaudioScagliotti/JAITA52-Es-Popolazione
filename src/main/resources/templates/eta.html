@@ -77,11 +77,27 @@
 	 </div>-->	
 
         <div class="row scheda">
+			<div class="percentage_container row">
+				<label class="col-1">Maschi</label>
+				<div class="col percentage">
+					<div id = "div_perc_male" class="barra_percent"></div>
+					<label id="lbl_perc_male"></label>
+				</div>
+			</div>
+			<div class="percentage_container row">
+				<label class="col-1">Female</label>
+				<div class="col percentage">
+				<div id = "div_perc_female" class="barra_percent"></div>
+				<label id="lbl_perc_female"></label>
+				</div>
+			</div>
 
-        	<p id="dati_istat_text" 
-        		data-prefix="Fonte dati ISTAT - Percentuale maschi e femmine nella fascia di età "
-        		data-suffix=" anni">
-        	</p>
+			<div>
+				<label id="dati_istat_text" 
+					data-prefix="Fonte dati ISTAT - Percentuale maschi e femmine nella fascia di età "
+					data-suffix=" anni">
+				</label>
+			</div>
         </div>
     </div>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
